@@ -101,7 +101,16 @@ main {
 
 .weather-box .weather {
   color: #fff;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+
+.weather-box .humidity {
+  padding-top: 20px;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }

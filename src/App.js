@@ -17,7 +17,7 @@ const search = evt => {
     .then(result => {
       setWeather(result);
       setQuery('');
-      console.log(result  );
+      console.log(result);
     });
   }
 }
@@ -31,7 +31,7 @@ const dateBuilder = (d) => {
   let month = months[d.getMonth()];
   let year = d.getFullYear();
 
-  return `${day} ${date} ${month} ${year}`
+  return `${day}, ${date} ${month} ${year}`
 }
 
   return (
@@ -53,18 +53,21 @@ const dateBuilder = (d) => {
       />
       </div>
       {(typeof weather.main != "undefined") ? (
- <div>
+    <div>
         <div className="location-box">
        <div className="location">{weather.name}, {weather.sys.country}</div>
         <div className="date">{dateBuilder(new Date())}</div>
+        <div className="date">{weather.main.humidity}</div>
       </div>
       <div className="weather-box">
       <div className="temp">
         {Math.round(weather.main.temp)}°c
     </div>
     <div className="weather">{weather.weather[0].main}</div>
+
+    <div className="humidity">Humidity :{weather.main.humidity}%</div>
     </div>
- </div>
+    </div>
       ) : ('')}
     </main>
   </div>
